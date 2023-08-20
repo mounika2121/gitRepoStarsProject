@@ -13,23 +13,30 @@ const RepoDetailsList = props => {
     createdAt,
   } = props
   return (
-    <li>
-      <img src={avatar} alt="avatar" />
+    <li className="repo-container">
+      <img src={avatar} alt="avatar" className="profile-image" />
       <div>
-        <h1>
+        <h1 className="name">
           <a href={htmlUrl} target="_blank" rel="noreferrer">
             {name}
           </a>
         </h1>
-        <p>{description}</p>
-        <div>
-          <p>{starCount}</p>
-          <p>{openIssuesCount}</p>
+        <p className="description">{description}</p>
+        <div className="star-and-issues">
+          <p className="count">Stars: {starCount}</p>
+          <p className="count">Issues: {openIssuesCount}</p>
         </div>
       </div>
-      <p>
-        Submitted at {moment(createdAt).fromNow()} by {owner}
+      <p className="submit-para">
+        Submitted at <span>{moment(createdAt).fromNow()}</span> by {owner}
       </p>
+      <div>
+        <select onChange={e => e.target.value}>
+          <option value="commit">Commit</option>
+          <option value="additions">Additions</option>
+          <option value="deletions">Deletions</option>
+        </select>
+      </div>
     </li>
   )
 }
