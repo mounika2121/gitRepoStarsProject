@@ -10,7 +10,6 @@ specifiers:
   axios: 1.4.0
   bootstrap: 5.3.1
   chalk: 4.1.0
-  chart.js: 4.3.3
   eslint-config-airbnb: 18.2.1
   eslint-config-prettier: 8.1.0
   eslint-plugin-prettier: 3.3.1
@@ -38,7 +37,6 @@ dependencies:
   axios: 1.4.0
   bootstrap: 5.3.1
   chalk: 4.1.0
-  chart.js: 4.3.3
   js-cookie: 3.0.0
   moment: 2.29.4
   react: 17.0.1
@@ -2821,10 +2819,6 @@ packages:
       '@types/yargs': 15.0.14
       chalk: 4.1.0
 
-  /@kurkle/color/0.3.2:
-    resolution: {integrity: sha512-fuscdXJ9G1qb7W8VdHi+IwRqij3lBkosAm4ydQtEmbY58OzHXqQhvlxqEkoz0yssNVn38bcpRWgA9PP+OGoisw==}
-    dev: false
-
   /@mui/base/5.0.0-beta.11_react-dom@17.0.1+react@17.0.1:
     resolution: {integrity: sha512-FdKZGPd8qmC3ZNke7CNhzcEgToc02M6WYZc9hcBsNQ17bgAd3s9F//1bDDYgMVBYxDM71V0sv/hBHlOY4I1ZVA==}
     engines: {node: '>=12.0.0'}
@@ -4937,13 +4931,6 @@ packages:
     resolution: {integrity: sha512-kWWXztvZ5SBQV+eRgKFeh8q5sLuZY2+8WUIzlxWVTg+oGwY14qylx1KbKzHd8P6ZYkAg0xyIDU9JMHhyJMZ1jw==}
     engines: {node: '>=10'}
     dev: true
-
-  /chart.js/4.3.3:
-    resolution: {integrity: sha512-aTk7pBw+x6sQYhon/NR3ikfUJuym/LdgpTlgZRe2PaEhjUMKBKyNaFCMVRAyTEWYFNO7qRu7iQVqOw/OqzxZxQ==}
-    engines: {pnpm: '>=7'}
-    dependencies:
-      '@kurkle/color': 0.3.2
-    dev: false
 
   /check-types/11.1.2:
     resolution: {integrity: sha512-tzWzvgePgLORb9/3a0YenggReLKAIb2owL03H2Xdoe5pKcUyWRSEQ8xfCar8t2SIAuEDwtmx2da1YB52YuHQMQ==}

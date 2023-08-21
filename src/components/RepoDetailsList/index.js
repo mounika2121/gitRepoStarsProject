@@ -1,6 +1,7 @@
 import moment from 'moment'
 import {useState} from 'react'
 import TotalChanges from '../TotalChanges'
+import ContributorChanges from '../ContributorChanges'
 import './index.css'
 
 const RepoDetailsList = props => {
@@ -54,6 +55,16 @@ const RepoDetailsList = props => {
             <h1 className="text-center">Total Additions</h1>
             <div>
               <TotalChanges repoOwner={owner} repoName={name} />
+            </div>
+          </div>
+        )}
+      </div>
+      <div>
+        {selectedOption === 'deletions' && (
+          <div>
+            <h1 className="text-center">Contributor Changes</h1>
+            <div>
+              <ContributorChanges repoOwner={owner} repoName={name} />
             </div>
           </div>
         )}

@@ -7,7 +7,6 @@ import RepoList from './components/RepoList'
 
 const App = () => {
   const [data, setData] = useState([])
-  const [appError, setError] = useState('')
   const [page, setPage] = useState(1)
   const [loading, setLoading] = useState(false)
 
@@ -22,8 +21,8 @@ const App = () => {
         setData(prevData => [...prevData, ...response.data.items])
         setLoading(false)
       })
-      .catch(() => {
-        setError('An error occurred')
+      .catch(error => {
+        console.error(error)
         setLoading(false)
       })
   }
@@ -51,7 +50,7 @@ const App = () => {
 
   return (
     <div className="container">
-      <h1 className="text-center text-info">Most Starred Repos</h1>
+      <h1 className="text-center text-info">Most Starred Repo</h1>
       <RepoList data={data} />
       {loading && (
         <div className="text-center">

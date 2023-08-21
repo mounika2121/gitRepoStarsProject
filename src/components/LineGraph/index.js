@@ -14,12 +14,12 @@ class LineGraph extends Component {
     const {data} = this.props
 
     const chartData = data.map((item, index) => ({
-      name: `Data Point ${index + 1}`,
-      middleValue: item[1],
+      name: `Week ${index + 1}`,
+      Additions: item[1],
     }))
 
     return (
-      <LineChart width={500} height={300} data={chartData}>
+      <LineChart width={350} height={250} data={chartData}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="name" />
         <YAxis />
@@ -27,7 +27,7 @@ class LineGraph extends Component {
         <Legend />
         <Line
           type="monotone"
-          dataKey="middleValue"
+          dataKey="Additions"
           stroke="blue"
           activeDot={{r: 8}}
         />
