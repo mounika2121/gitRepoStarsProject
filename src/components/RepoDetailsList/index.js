@@ -1,4 +1,6 @@
 import moment from 'moment'
+import {useState} from 'react'
+import TotalChanges from '../TotalChanges'
 import './index.css'
 
 const RepoDetailsList = props => {
@@ -12,6 +14,13 @@ const RepoDetailsList = props => {
     openIssuesCount,
     createdAt,
   } = props
+
+  const [selectedOption, setSelectedOption] = useState('commit')
+
+  const handleOptionChange = e => {
+    setSelectedOption(e.target.value)
+  }
+
   return (
     <li className="repo-container">
       <img src={avatar} alt="avatar" className="profile-image" />
@@ -31,12 +40,15 @@ const RepoDetailsList = props => {
         Submitted at <span>{moment(createdAt).fromNow()}</span> by {owner}
       </p>
       <div>
-        <select onChange={e => e.target.value}>
+        <select onChange={handleOptionChange} value={selectedOption}>
           <option value="commit">Commit</option>
           <option value="additions">Additions</option>
           <option value="deletions">Deletions</option>
         </select>
       </div>
+      {selectedOption === 'additions' && (
+        <TotalChanges repoOwner={owner} repoName={name} />
+      )}
     </li>
   )
 }
