@@ -1,10 +1,11 @@
 import {useState, useEffect} from 'react'
 import axios from 'axios'
+import LineGraph from '../LineGraph'
 
 const TotalChanges = props => {
   const {repoOwner, repoName} = props
   const [codeFrequencyData, setCodeFrequencyData] = useState([])
-  const accessToken = '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'
+  const accessToken = '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'
 
   useEffect(() => {
     const fetchCodeFrequencyData = async () => {
@@ -18,8 +19,8 @@ const TotalChanges = props => {
           `https://api.github.com/repos/${repoOwner}/${repoName}/stats/code_frequency`,
           {headers},
         )
-
         setCodeFrequencyData(response.data)
+        // console.log(response.data)
       } catch (error) {
         console.error('Error fetching data:', error)
       }
@@ -28,7 +29,11 @@ const TotalChanges = props => {
     fetchCodeFrequencyData()
   }, [])
 
-  return <div>{codeFrequencyData.map(item => console.log(item))}</div>
+  return (
+    <div>
+      <LineGraph data={codeFrequencyData} />
+    </div>
+  )
 }
 
 export default TotalChanges

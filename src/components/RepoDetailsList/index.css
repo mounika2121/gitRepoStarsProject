@@ -2,6 +2,11 @@ li {
   list-style-type: none;
 }
 
+.list-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .repo-container {
   display: flex;
   flex-direction: row;
