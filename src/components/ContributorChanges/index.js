@@ -6,7 +6,7 @@ const ContributorChanges = props => {
   const {repoOwner, repoName} = props
   const [codeFrequencyData, setCodeFrequencyData] = useState([])
   const [errorMessage, setErrorMessage] = useState('')
-  const accessToken = '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'
+  const accessToken = 'Enter your access token'
 
   useEffect(() => {
     const fetchCodeFrequencyData = async () => {
@@ -30,7 +30,9 @@ const ContributorChanges = props => {
         }
       } catch (error) {
         console.error('Error fetching data:', error)
-        setErrorMessage('An error occurred while fetching data.')
+        setErrorMessage(
+          'Unauthorized user, please enter your git access token and try again!',
+        )
       }
     }
 
