@@ -2,7 +2,7 @@ import RepoDetailsList from '../RepoDetailsList'
 
 const RepoList = ({data}) => (
   <div>
-    <ul className="ul-list">
+    <ul>
       {data.map(item => (
         <RepoDetailsList
           key={item.id}

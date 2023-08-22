@@ -49,10 +49,10 @@ const RepoDetailsList = props => {
           </select>
         </div>
       </div>
-      <div>
+      <div className="graph-container">
         {selectedOption === 'additions' && (
           <div>
-            <h1 className="text-center">Total Additions</h1>
+            <h1 className="sub-heading">Total Additions</h1>
             <div>
               <TotalChanges repoOwner={owner} repoName={name} />
             </div>
@@ -62,7 +62,7 @@ const RepoDetailsList = props => {
       <div>
         {selectedOption === 'deletions' && (
           <div>
-            <h1 className="text-center">Contributor Changes</h1>
+            <h1 className="sub-heading">Contributor Changes</h1>
             <div>
               <ContributorChanges repoOwner={owner} repoName={name} />
             </div>
