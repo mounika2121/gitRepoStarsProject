@@ -19,7 +19,7 @@ class LineGraph extends Component {
     }))
 
     return (
-      <LineChart width={350} height={250} data={chartData}>
+      <LineChart width={320} height={250} data={chartData}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="name" />
         <YAxis />

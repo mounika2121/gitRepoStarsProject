@@ -5,7 +5,8 @@ import LineGraph from '../LineGraph'
 const TotalChanges = props => {
   const {repoOwner, repoName} = props
   const [codeFrequencyData, setCodeFrequencyData] = useState([])
-  const accessToken = 'Token'
+  const [errorMessage, setErrorMessage] = useState('')
+  const accessToken = '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'
 
   useEffect(() => {
     const fetchCodeFrequencyData = async () => {
@@ -19,19 +20,26 @@ const TotalChanges = props => {
           `https://api.github.com/repos/${repoOwner}/${repoName}/stats/code_frequency`,
           {headers},
         )
-        setCodeFrequencyData(response.data)
-        // console.log(response.data)
+
+        if (response.status === 202) {
+          setErrorMessage('Please refresh the page and try again :)')
+        } else {
+          setCodeFrequencyData(response.data)
+          setErrorMessage('')
+        }
       } catch (error) {
         console.error('Error fetching data:', error)
+        setErrorMessage('An error occurred while fetching data.')
       }
     }
 
     fetchCodeFrequencyData()
-  }, [])
+  }, [repoOwner, repoName])
 
   return (
     <div>
-      <LineGraph data={codeFrequencyData} />
+      {errorMessage && <p>{errorMessage}</p>}
+      {!errorMessage && <LineGraph data={codeFrequencyData} />}
     </div>
   )
 }

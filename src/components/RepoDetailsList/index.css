@@ -72,6 +72,10 @@ select {
   margin-top: 8px;
 }
 
+.sub-para {
+  align-self: flex-end;
+}
+
 @media screen and (max-width: 768px) {
   .profile-image {
     height: 50px;
@@ -94,9 +98,10 @@ select {
     width: 80px;
     font-size: 12px;
   }
-  .submit-para {
+  .sub-para {
     width: 50px;
     font-size: 12px;
+    align-self: center;
   }
   .star-and-issues {
     font-size: 10px;

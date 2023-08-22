@@ -38,7 +38,7 @@ const RepoDetailsList = props => {
             <p className="count">Issues: {openIssuesCount}</p>
           </div>
         </div>
-        <p className="submit-para">
+        <p className="sub-para">
           Submitted at <span>{moment(createdAt).fromNow()}</span> by {owner}
         </p>
         <div>
